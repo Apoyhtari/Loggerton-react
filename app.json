@@ -1,0 +1,9 @@
+{
+  "name": "Loggerton baseline server",
+  "description": "Loggerton server",
+  "keywords": [ "react", "reactjs", "logging" ],
+  "env" : {
+    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+  }
+}
+
