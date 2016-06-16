@@ -5,5 +5,7 @@ Loggerton was originally built using nodeJS, socket.io and express. But now for 
 
 #TODO:
 support for multiple logs
+
 hashtags
+
 styling
