@@ -17,6 +17,7 @@ var Comment = React.createClass({
           
           {this.props.children}
           <p>sent: {this.props.timestamp}</p>
+          <p id="tags">{this.props.tag}</p>
       </div>
     );
 
@@ -90,7 +91,7 @@ var CommentList = React.createClass({
   render: function() {
     var commentNodes = this.props.data.map(function(comment) {
       return (
-        <Comment author={comment.author} key={comment.id} timestamp={comment.timestamp}>
+        <Comment author={comment.author} key={comment.id} timestamp={comment.timestamp} tag={comment.tag}>
           {comment.text}
         </Comment>
       );
@@ -106,25 +107,30 @@ var CommentList = React.createClass({
 
 var CommentForm = React.createClass({
   getInitialState: function() {
-    return {author: '', text: ''};
+    return {author: '', text: '', tag: ''};
   },
   handleAuthorChange: function(e) {
-     console.log("something happened");
+    
     this.setState({author: e.target.value});
   },
   handleTextChange: function(e) {
-    console.log("something happened");
+    
     this.setState({text: e.target.value});
+  },
+  handleTagChange: function(e) {
+    
+    this.setState({tag: e.target.value});
   },
   handleSubmit: function(e) {
     e.preventDefault();
     var author = this.state.author.trim();
     var text = this.state.text.trim();
+    var tag = this.state.tag.trim();
     if (!text || !author) {
       return;
     }
-    this.props.onCommentSubmit({author: author, text: text});
-    this.setState({author: '', text: ''});
+    this.props.onCommentSubmit({author: author, text: text, tag: tag});
+    this.setState({author: '', text: '', tag: ''});
   },
   render: function() {
     return (
@@ -140,6 +146,11 @@ var CommentForm = React.createClass({
           value={this.state.text}
           onChange={this.handleTextChange}/>
 
+        
+        <input type="text"
+         placeholder="tag"
+         value={this.state.tag}
+        onChange={this.handleTagChange}/>
         <input type="submit" value="Post" />
       </form>
     );

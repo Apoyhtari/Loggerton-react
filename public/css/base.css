@@ -60,3 +60,15 @@ p, ul {
 ul {
   padding-left: 30px;
 }
+
+.comment {
+  margin-left: 15px;
+}
+
+.commentForm input {
+  margin-left: 15px;
+}
+
+#tags {
+  color: blue;
+}

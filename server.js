@@ -63,7 +63,8 @@ app.post('/api/comments', function(req, res) {
       id: Date.now(),
       author: req.body.author,
       text: req.body.text,
-      timestamp: new Date() //add timestamp
+      timestamp: new Date(), //add timestamp
+      tag: req.body.tag //tag support
     };
     comments.push(newComment);
     fs.writeFile(COMMENTS_FILE, JSON.stringify(comments, null, 4), function(err) {
