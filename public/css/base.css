@@ -69,6 +69,19 @@ ul {
   margin-left: 15px;
 }
 
+.inputContainer{
+  margin: 0!important;
+}
+
 #tags {
-  color: blue;
+  color: #FFF;
+  border-radius: 5px;
+  background-color: blue;
+  max-width: 50px;
+  
+  text-align: center;
+}
+
+.commentContainer {
+  margin: 0!important;
 }

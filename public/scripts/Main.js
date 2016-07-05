@@ -14,9 +14,7 @@ var Comment = React.createClass({
         <h4 className="commentAuthor">
           {this.props.author}
         </h4>
-          
-          {this.props.children}
-          <p>sent: {this.props.timestamp}</p>
+          <p>{this.props.timestamp}</p>
           <p id="tags">{this.props.tag}</p>
       </div>
     );
@@ -97,9 +95,13 @@ var CommentList = React.createClass({
       );
     });
     return (
-      <div className="commentList col-md-12">
+      <div className="container commentContainer">
+        <div className="row">
+          <div className="commentList col-md-12">
        
        {commentNodes}
+          </div>
+        </div>
       </div>
     );
   }
@@ -134,25 +136,29 @@ var CommentForm = React.createClass({
   },
   render: function() {
     return (
-       <form className="commentForm" onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          placeholder="Your name"
-          value={this.state.author}
-          onChange={this.handleAuthorChange}/>
-        <input
-          type="text"
-          placeholder="Say something..."
-          value={this.state.text}
-          onChange={this.handleTextChange}/>
+      <div className="container inputContainer">
+        <div className="row clearfix">
+          <form className="commentForm col-md-6" onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              placeholder="Your name"
+              value={this.state.author}
+              onChange={this.handleAuthorChange}/>
+            <input
+             type="text"
+              placeholder="Say something..."
+              value={this.state.text}
+              onChange={this.handleTextChange}/>
 
         
-        <input type="text"
-         placeholder="tag"
-         value={this.state.tag}
-        onChange={this.handleTagChange}/>
-        <input type="submit" value="Post" />
-      </form>
+            <input type="text"
+              placeholder="tag"
+              value={this.state.tag}
+              onChange={this.handleTagChange}/>
+            <input type="submit" value="Post" />
+          </form>
+        </div>
+      </div>
     );
   }
 });
