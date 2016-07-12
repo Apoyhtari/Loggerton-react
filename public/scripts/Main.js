@@ -138,7 +138,7 @@ var CommentForm = React.createClass({
     return (
       <div className="container inputContainer">
         <div className="row clearfix">
-          <form className="commentForm col-md-6" onSubmit={this.handleSubmit}>
+          <form className="commentForm col-md-8" onSubmit={this.handleSubmit}>
             <input
               type="text"
               placeholder="Your name"

@@ -71,6 +71,7 @@ ul {
 
 .inputContainer{
   margin: 0!important;
+  margin-top: 15px!important;
 }
 
 #tags {
@@ -85,3 +86,23 @@ ul {
 .commentContainer {
   margin: 0!important;
 }
+
+.header {
+  margin-right: 0!important;
+  margin-left: 0!important;
+  width: 100%!important;
+}
+
+.header h1 {
+  text-align: center;
+  border-bottom: 0px solid transparent;
+}
+
+.header .row {
+  width: 100%;
+}
+
+.commentBox {
+  border: 1px solid #ddd;
+}
+
